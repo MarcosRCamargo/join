@@ -15,7 +15,7 @@
 
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p></p>
+            <p>{{$message}}</p>
         </div>
     @endif
 
@@ -36,7 +36,7 @@
                 <td>R$<?=number_format($produto->preco, 2, ',', ' ');?></td>
                 <td><?= $produto->created_at ?></td>
                 <td>
-                    <form action="" method="POST">
+                    <form action="{{ route('produto.destroy',$produto->id) }}" method="POST">
 
                         <a href="{{ route('produto.show',$produto->id) }}" title="Exibir">
                             <i class="fas fa-eye text-success  fa-lg"></i>

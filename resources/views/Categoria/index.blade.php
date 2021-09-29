@@ -34,11 +34,11 @@
                 <td>
                     <form action="" method="POST">
 
-                        <a href="{{ route('produto.show',$categoria->id) }}" title="Exibir">
+                        <a href="{{ route('categoria.show',$categoria->id) }}" title="Exibir">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{ route('products.edit',$categoria->id) }}" title="Editar">
+                        <a href="{{ route('categoria.edit',$categoria->id) }}" title="Editar">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
@@ -54,6 +54,6 @@
         @endforeach
     </table>
 
-    {!! $categorias->links() !!}
+    {{-- {!! $categorias->links() !!} --}}
 
 @endsection

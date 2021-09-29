@@ -19,4 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::resource('produto', ProdutoController::class);
+Route::resource('post', 'ProdutoController@store');
+Route::resource('put', 'ProdutoController@update');
+Route::resource('post', 'ProdutoController@destroy');
 Route::resource('categoria', CategoriaController::class);

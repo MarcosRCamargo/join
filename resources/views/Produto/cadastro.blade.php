@@ -22,7 +22,7 @@
             </ul>
         </div>
     @endif
-    <form action="" method="POST" >
+    <form action="{{ route('produto.store') }}" method="POST" >
         @csrf
 
         <div class="row">
@@ -47,7 +47,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Preço:</strong>
-                    <input type="number" name="price" class="form-control" placeholder="Informe o Valor">
+                    <input type="number" name="preco" class="form-control" placeholder="Informe o Valor">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
