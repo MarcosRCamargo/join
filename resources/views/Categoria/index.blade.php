@@ -7,15 +7,19 @@
                 <h2>Lista de Categria</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="" title="Create a produto"> <i class="fas fa-plus-circle"></i>
-                    </a>
+                <a class="btn btn-success" href="{{ route('categoria.create') }}" title="Cadastrar categoria"> <i class="fas fa-plus-circle"></i>
+                Nova Categoria</a>
             </div>
         </div>
     </div>
-
+    @if ($message = Session::get('error'))
+        <div class="alert alert-danger">
+            <p>{{$message}}</p>
+        </div>
+    @endif
     @if ($message = Session::get('success'))
         <div class="alert alert-success">
-            <p></p>
+            <p>{{$message}}</p>
         </div>
     @endif
 
@@ -32,7 +36,7 @@
                 <td><?=$categoria->nome_categoria ?></td>
                 <td><?=$categoria->created_at->format('m/d/Y H:i')?></td>
                 <td>
-                    <form action="" method="POST">
+                    <form action="{{ route('categoria.destroy', $categoria->id) }}" method="POST">
 
                         <a href="{{ route('categoria.show',$categoria->id) }}" title="Exibir">
                             <i class="fas fa-eye text-success  fa-lg"></i>

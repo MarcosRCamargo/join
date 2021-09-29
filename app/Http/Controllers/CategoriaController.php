@@ -44,7 +44,7 @@ class CategoriaController extends Controller
 
         Categoria::create($request->all());
 
-        return redirect()->route('Categoria.index')
+        return redirect()->route('categoria.index')
             ->with('success', 'Categoria cadastrada com Sucesso.');
     }
 
@@ -88,8 +88,18 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Categoria $categoria)
+    public function destroy($id)
     {
-        //
+        try {
+            Categoria::destroy($id);
+            return redirect('categoria')->with('success', 'Categoria excluida!');
+        } catch (\Throwable $th) {
+            return redirect('categoria')->with('error', 'Não foi possível excluir a categoria, ela esta sendo utilizada!');
+        }
+
+        // $res =  $categoria->delete($categoria);
+        // var_dump($res);die;
+        // return redirect()->route('categoria.index')
+        //     ->with('success', 'Categoria excluida');
     }
 }

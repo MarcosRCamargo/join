@@ -7,7 +7,7 @@
                 <h2>Cadastrar Produto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('produto.index') }}"  title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('produto.index') }}"  title=""> <i class="fas fa-backward "></i> Voltar </a>
             </div>
         </div>
     </div>

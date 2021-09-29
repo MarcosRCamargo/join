@@ -7,8 +7,8 @@
                 <h2>Lista de Produtos</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('produto.create') }}" title="Create a produto"> <i class="fas fa-plus-circle"></i>
-                    </a>
+                <a class="btn btn-success" href="{{ route('produto.create') }}" title="Cadastrar Produto"> <i class="fas fa-plus-circle"></i>
+                Novo Produto</a>
             </div>
         </div>
     </div>

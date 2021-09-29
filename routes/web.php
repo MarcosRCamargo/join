@@ -23,3 +23,6 @@ Route::resource('post', 'ProdutoController@store');
 Route::resource('put', 'ProdutoController@update');
 Route::resource('post', 'ProdutoController@destroy');
 Route::resource('categoria', CategoriaController::class);
+Route::resource('post', 'CategoriaController@store');
+Route::delete('categoria/{id}', 'CategoriaController@destroy')->name('categoria.destroy');
+

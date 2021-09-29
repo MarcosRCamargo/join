@@ -7,7 +7,7 @@
                 <h2>Cadastrar Categoria</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="" title="Go back"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('categoria.index') }}" title="Voltar"> <i class="fas fa-backward "></i> Voltar</a>
             </div>
         </div>
     </div>
@@ -22,9 +22,9 @@
             </ul>
         </div>
     @endif
-    <form action="" method="POST" >
+    <form action="{{ route('categoria.store') }}" method="POST" >
         @csrf
-
+        @method('POST')
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
