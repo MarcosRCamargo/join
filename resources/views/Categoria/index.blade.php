@@ -26,11 +26,11 @@
             <th>Data de Cadastro</th>
             <th>Ações</th>
         </tr>
-        @foreach ($produtos as $produto)
+        @foreach ($categorias as $categoria)
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td><?=$categoria->id ?></td>
+                <td><?=$categoria->nome_categoria ?></td>
+                <td><?=$categoria->created_at->format('m/d/Y H:i')?></td>
                 <td>
                     <form action="" method="POST">
 
@@ -54,6 +54,6 @@
         @endforeach
     </table>
 
-    {!! $produtos->links() !!}
+    {!! $categorias->links() !!}
 
 @endsection

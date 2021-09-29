@@ -14,9 +14,9 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        $categoria = Categoria::latest()->paginate(5);
+        $categorias = Categoria::latest()->paginate(5);
 
-        return view('Categoria.index', compact('$categoria'))
+        return view('Categoria.index', compact('categorias'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('Categoria.cadastro');
     }
 
     /**
@@ -38,7 +38,14 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nome_categoria' => 'required',
+        ]);
+
+        Categoria::create($request->all());
+
+        return redirect()->route('Categoria.index')
+            ->with('success', 'Categoria cadastrada com Sucesso.');
     }
 
     /**

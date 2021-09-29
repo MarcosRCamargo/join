@@ -15,9 +15,10 @@ class CreateProductsTable extends Migration
     {
         Schema::create('produto', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('id_categoria')->references('id')->on('categoria');
+            $table->unsignedBigInteger('id_categoria');
             $table->string('nome_produto', 255)->nullable();
             $table->decimal('preco', 10, 2)->nullable()->default(0.00);
+            $table->foreign('id_categoria')->references('id')->on('categoria');
             $table->timestamps();
         });
     }
