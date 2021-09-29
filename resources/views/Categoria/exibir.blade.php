@@ -4,10 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2>Editar Produto</h2>
+                <h2>Visualizar Categoria</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="" title="Voltar"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="" title="Go back"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -31,14 +31,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nome:</strong>
-                    <input type="text" name="nome_produto" value="" class="form-control" placeholder="Name">
+                    <input type="text" name="name" value="" class="form-control" placeholder="Name">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Categoria</strong>
                     <select class="form-control" placeholder="Selecione uma categoria"></select>
-
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
@@ -49,7 +48,7 @@
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-                <button type="submit" class="btn btn-primary">Salvar</button>
+                <button type="submit" class="btn btn-primary">Voltar</button>
             </div>
         </div>
 
