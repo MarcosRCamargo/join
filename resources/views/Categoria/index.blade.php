@@ -34,11 +34,11 @@
                 <td>
                     <form action="" method="POST">
 
-                        <a href="" title="show">
+                        <a href="{{ route('produto.show',$categoria->id) }}" title="Exibir">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="">
+                        <a href="{{ route('products.edit',$categoria->id) }}" title="Editar">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 

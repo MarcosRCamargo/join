@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categoria;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 
@@ -27,7 +28,9 @@ class ProdutoController extends Controller
      */
     public function create()
     {
-        return view('Produto.cadastro');
+        $categorias = Categoria::latest()->get();
+
+        return view('Produto.cadastro', compact('categorias'));
     }
 
     /**
@@ -58,7 +61,9 @@ class ProdutoController extends Controller
      */
     public function show(Produto $produtos)
     {
-        return view('Produto.exibir', compact('produtos'));
+        $categorias = Categoria::latest()->get();
+
+        return view('Produto.exibir', compact(['produtos', 'categorias']));
     }
 
     /**
@@ -69,7 +74,9 @@ class ProdutoController extends Controller
      */
     public function edit(Produto $produto)
     {
-        return view('Produto.editar', compact('produto'));
+        $categorias = Categoria::latest()->get();
+
+        return view('Produto.editar', compact(['produto', 'categorias']));
     }
 
     /**

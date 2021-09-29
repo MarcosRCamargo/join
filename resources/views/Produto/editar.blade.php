@@ -7,7 +7,7 @@
                 <h2>Editar Produto</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="" title="Voltar"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('produto.index') }}" title="Voltar"> <i class="fas fa-backward "></i> </a>
             </div>
         </div>
     </div>
@@ -37,8 +37,13 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Categoria</strong>
-                    <select class="form-control" placeholder="Selecione uma categoria"></select>
+                    <select class="form-control" name="id_categoria">
 
+                        <option>Selecione uma Categoria</option>
+                      
+                        @foreach ($categorias as $item)
+                          <option value="{{ $item->id }}" > {{ $item->nome_categoria }} </option>
+                        @endforeach    </select>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">

@@ -7,7 +7,7 @@
                 <h2>Lista de Produtos</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="" title="Create a produto"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="{{ route('produto.create') }}" title="Create a produto"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
@@ -38,11 +38,11 @@
                 <td>
                     <form action="" method="POST">
 
-                        <a href="" title="show">
+                        <a href="{{ route('produto.show',$produto->id) }}" title="Exibir">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="">
+                        <a href="{{ route('produto.edit',$produto->id) }}" title="Editar">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 
