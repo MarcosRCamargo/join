@@ -7,7 +7,7 @@
                 <h2>Editar Categoria</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="" title="Voltar"> <i class="fas fa-backward "></i> </a>
+                <a class="btn btn-primary" href="{{ route('categoria.index') }}" title="Voltar"> <i class="fas fa-backward "></i> Voltar</a>
             </div>
         </div>
     </div>
@@ -22,8 +22,7 @@
             </ul>
         </div>
     @endif
-
-    <form action="" method="POST">
+    <form action="{{ route('categoria.update', $categoria->id) }}"  method="POST">
         @csrf
         @method('PUT')
 
@@ -31,7 +30,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nome:</strong>
-                    <input type="text" name="nome_categoria" value="" class="form-control" placeholder="Nome">
+                    <input type="text" name="nome_categoria" value="{{ $categoria->nome_categoria }}"  class="form-control" placeholder="Nome">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

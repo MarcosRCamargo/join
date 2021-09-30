@@ -32,8 +32,13 @@
             <tr>
                 <td><?= $produto->id ?></td>
                 <td><?= $produto->nome_produto ?></td>
-                <td><?= $produto->id_categoria ?></td>
-                <td>R$<?=number_format($produto->preco, 2, ',', ' ');?></td>
+                <td><?php 
+                foreach ($categorias as $categoria) {
+                    if ($categoria->id == $produto->id_categoria) {
+                       echo $categoria->nome_categoria;
+                    }
+                }  ?></td>
+                <td>R$<?=number_format($produto->preco, 2, ',', '.');?></td>
                 <td><?= $produto->created_at ?></td>
                 <td>
                     <form action="{{ route('produto.destroy',$produto->id) }}" method="POST">

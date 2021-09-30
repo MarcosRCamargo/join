@@ -67,7 +67,9 @@ class CategoriaController extends Controller
      */
     public function edit(Categoria $categoria)
     {
-        //
+        $categoria = Categoria::first();
+
+        return view('Categoria.editar', compact('categoria'));
     }
 
     /**
@@ -77,9 +79,21 @@ class CategoriaController extends Controller
      * @param  \App\Models\Categoria  $categoria
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Categoria $categoria)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nome_categoria' => 'required',
+        ]);
+       try {
+        $categoria = Categoria::find($id);
+        $categoria->nome_categoria = $request->nome_categoria;
+        $categoria->save();
+            return redirect()->route('categoria.index')
+            ->with('success', 'Categoria atualizada');
+       } catch (\Throwable $th) {
+            return redirect()->route('categoria.index')
+            ->with('error', 'Não foi possível atualizar a categoria');
+       }
     }
 
     /**

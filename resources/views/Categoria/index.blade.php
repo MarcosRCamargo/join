@@ -42,7 +42,7 @@
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{ route('categoria.edit',$categoria->id) }}" title="Editar">
+                        <a href="{{ route('categoria.edit', $categoria->id) }}" title="Editar">
                             <i class="fas fa-edit  fa-lg"></i>
                         </a>
 

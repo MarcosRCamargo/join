@@ -29,7 +29,7 @@
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
                     <strong>Nome Categoria:</strong>
-                    <input type="text" name="nome_categoria" class="form-control" placeholder="Name">
+                    <input type="text" name="nome_categoria" class="form-control" placeholder="Nome da Categoria">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">

@@ -12,8 +12,7 @@ class Categoria extends Model
     public $timestamps = true;
 
     protected $fillable = [
-        'nome_categoria',
-        'created_at'
+        'nome_categoria'
     ];
 
 }
